@@ -17,7 +17,7 @@
                     "off",
                     {
                         "type": "element",
-                        "prefix": "admin",
+                        "prefix": "e-shop",
                         "style": "kebab-case"
                     }
                 ]

@@ -1,25 +1,25 @@
 {
-    "name": "admin",
+    "name": "admin-angular",
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "projectType": "application",
     "prefix": "",
-    "sourceRoot": "apps/admin/src",
+    "sourceRoot": "apps/admin-angular/src",
     "tags": [],
     "targets": {
         "build": {
             "executor": "@angular-devkit/build-angular:browser",
             "outputs": ["{options.outputPath}"],
             "options": {
-                "outputPath": "dist/apps/admin",
-                "index": "apps/admin/src/index.html",
-                "main": "apps/admin/src/main.ts",
+                "outputPath": "dist/apps/admin-angular",
+                "index": "apps/admin-angular/src/index.html",
+                "main": "apps/admin-angular/src/main.ts",
                 "polyfills": ["zone.js"],
-                "tsConfig": "apps/admin/tsconfig.app.json",
+                "tsConfig": "apps/admin-angular/tsconfig.app.json",
                 "assets": [
-                    "apps/admin/src/favicon.ico",
-                    "apps/admin/src/assets"
+                    "apps/admin-angular/src/favicon.ico",
+                    "apps/admin-angular/src/assets"
                 ],
-                "styles": ["apps/admin/src/styles.scss"],
+                "styles": ["apps/admin-angular/src/styles.scss"],
                 "scripts": []
             },
             "configurations": {
@@ -53,10 +53,10 @@
             "executor": "@angular-devkit/build-angular:dev-server",
             "configurations": {
                 "production": {
-                    "browserTarget": "admin:build:production"
+                    "browserTarget": "admin-angular:build:production"
                 },
                 "development": {
-                    "browserTarget": "admin:build:development"
+                    "browserTarget": "admin-angular:build:development"
                 }
             },
             "defaultConfiguration": "development"
@@ -64,7 +64,7 @@
         "extract-i18n": {
             "executor": "@angular-devkit/build-angular:extract-i18n",
             "options": {
-                "browserTarget": "admin:build"
+                "browserTarget": "admin-angular:build"
             }
         },
         "lint": {
@@ -72,8 +72,8 @@
             "outputs": ["{options.outputFile}"],
             "options": {
                 "lintFilePatterns": [
-                    "apps/admin/**/*.ts",
-                    "apps/admin/**/*.html"
+                    "apps/admin-angular/**/*.ts",
+                    "apps/admin-angular/**/*.html"
                 ]
             }
         },
@@ -81,7 +81,7 @@
             "executor": "@nx/jest:jest",
             "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
             "options": {
-                "jestConfig": "apps/admin/jest.config.ts",
+                "jestConfig": "apps/admin-angular/jest.config.ts",
                 "passWithNoTests": true
             },
             "configurations": {
@@ -94,7 +94,7 @@
         "serve-static": {
             "executor": "@nx/web:file-server",
             "options": {
-                "buildTarget": "admin:build"
+                "buildTarget": "admin-angular:build"
             }
         }
     }
