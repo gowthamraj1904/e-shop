@@ -8,19 +8,19 @@ export default defineConfig({
 
     server: {
         port: 4200,
-        host: 'localhost',
+        host: 'localhost'
     },
 
     preview: {
         port: 4300,
-        host: 'localhost',
+        host: 'localhost'
     },
 
     plugins: [
         react(),
         viteTsConfigPaths({
-            root: '../../',
-        }),
+            root: '../../'
+        })
     ],
 
     // Uncomment this if you are using workers.
@@ -35,9 +35,9 @@ export default defineConfig({
     test: {
         globals: true,
         cache: {
-            dir: '../../node_modules/.vitest',
+            dir: '../../node_modules/.vitest'
         },
         environment: 'jsdom',
-        include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    },
+        include: ['src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']
+    }
 });

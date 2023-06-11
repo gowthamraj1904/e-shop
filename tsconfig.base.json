@@ -16,9 +16,11 @@
         "baseUrl": ".",
         "paths": {
             "@libs/interfaces": ["libs/interfaces/src/index.ts"],
-            "@server/routes": ["apps/server/src/routes/index.ts"],
+            "@libs/react/header": ["libs/react/header/src/index.ts"],
+            "@libs/ui/styles/base": ["libs/ui/styles/base/index.scss"],
+            "@server/controllers": ["apps/server/src/controllers/index.ts"],
             "@server/models": ["apps/server/src/models/index.ts"],
-            "@server/controllers": ["apps/server/src/controllers/index.ts"]
+            "@server/routes": ["apps/server/src/routes/index.ts"]
         }
     },
     "exclude": ["node_modules", "tmp"]
