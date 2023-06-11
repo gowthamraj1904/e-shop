@@ -14,7 +14,12 @@
         "skipLibCheck": true,
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
-        "paths": {}
+        "paths": {
+            "@libs/interfaces": ["libs/interfaces/src/index.ts"],
+            "@server/routes": ["apps/server/src/routes/index.ts"],
+            "@server/models": ["apps/server/src/models/index.ts"],
+            "@server/controllers": ["apps/server/src/controllers/index.ts"]
+        }
     },
     "exclude": ["node_modules", "tmp"]
 }

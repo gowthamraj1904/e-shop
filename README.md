@@ -62,6 +62,12 @@ nx run client-angular:serve
 nx run client-react:serve
 ```
 
+Run multiple apps
+
+```
+npx nx run-many --target=serve --projects=client-react,server
+```
+
 To execute tasks with Nx use the following syntax:
 
 ```
@@ -81,3 +87,24 @@ nx run-many -t <target1> <target2> -p <proj1> <proj2>
 ```
 
 Targets can be defined in the `package.json` or `projects.json`.
+
+## Import Mongoose and CORS
+
+```
+npm i cors mongoose
+npm i -D @types/mongoose @types/cors
+```
+
+## Create Server API
+
+Create Models, Routes, Controllers
+
+## Create paths
+
+Create paths in the `tsconfig.base.ts` to import the files using alias.
+
+## Create Interface Library
+
+```
+npx nx generate @nx/js:library <library-name>
+```
