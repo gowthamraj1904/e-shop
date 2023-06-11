@@ -16,7 +16,8 @@
                 "tsConfig": "apps/server/tsconfig.app.json",
                 "assets": ["apps/server/src/assets"],
                 "isolatedConfig": true,
-                "webpackConfig": "apps/server/webpack.config.js"
+                "webpackConfig": "apps/server/webpack.config.js",
+                "generatePackageJson": true
             },
             "configurations": {
                 "development": {},
@@ -57,6 +58,20 @@
                     "ci": true,
                     "codeCoverage": true
                 }
+            }
+        },
+        "docker-build": {
+            "dependsOn": ["build"],
+            "command": "docker build -f Dockerfile . -t server"
+        },
+        "deploy": {
+            "executor": "nx:run-commands",
+            "options": {
+                "commands": [
+                    "nx build server",
+                    "docker build -f Dockerfile . -t server"
+                ],
+                "parallel": false
             }
         }
     },

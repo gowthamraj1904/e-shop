@@ -6,9 +6,13 @@ import * as path from 'path';
 
 const app = express();
 
-const port: string | number = process.env.PORT;
-const connectionString: string = process.env.CONNECTION_STRING;
-const dbName: string = process.env.DB_NAME;
+const port: string | number = 3000;
+const connectionString =
+    'mongodb+srv://gowtham04raj:123asd123@clustereshop.stwfpfw.mongodb.net/?retryWrites=true';
+const dbName = 'eshop-database';
+// const port: string | number = process.env.PORT;
+// const connectionString: string = process.env.CONNECTION_STRING;
+// const dbName: string = process.env.DB_NAME;
 const connectionOptions: Record<string, boolean | string> = {
     useNewUrlParser: true,
     useUnifiedTopology: true,

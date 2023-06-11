@@ -2,7 +2,8 @@ import { Router } from 'express';
 import { userController } from '@server/controllers';
 
 const router: Router = Router();
-const apiURL = process.env.API_URL;
+const apiURL = '/api/v1';
+// const apiURL = process.env.API_URL;
 
 router.get(`${apiURL}/users`, userController.getUsers);
 router.get(`${apiURL}/users/:id`, userController.getUserById);

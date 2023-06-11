@@ -2,7 +2,9 @@
     "name": "@e-shop/source",
     "version": "0.0.0",
     "license": "MIT",
-    "scripts": {},
+    "scripts": {
+        "start": "node dist/apps/server/main"
+    },
     "private": true,
     "dependencies": {
         "@angular/animations": "~16.0.0",
