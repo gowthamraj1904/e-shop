@@ -1,0 +1,82 @@
+{
+    "name": "test-server-express",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "apps/test-server-express/src",
+    "projectType": "application",
+    "targets": {
+        "build": {
+            "executor": "@nx/esbuild:esbuild",
+            "outputs": ["{options.outputPath}"],
+            "defaultConfiguration": "production",
+            "options": {
+                "platform": "node",
+                "outputPath": "dist/apps/test-server-express",
+                "format": ["cjs"],
+                "bundle": false,
+                "main": "apps/test-server-express/src/main.ts",
+                "tsConfig": "apps/test-server-express/tsconfig.app.json",
+                "assets": ["apps/test-server-express/src/assets"],
+                "generatePackageJson": true,
+                "esbuildOptions": {
+                    "sourcemap": true,
+                    "outExtension": {
+                        ".js": ".js"
+                    }
+                }
+            },
+            "configurations": {
+                "development": {},
+                "production": {
+                    "generateLockfile": true,
+                    "esbuildOptions": {
+                        "sourcemap": false,
+                        "outExtension": {
+                            ".js": ".js"
+                        }
+                    }
+                }
+            }
+        },
+        "serve": {
+            "executor": "@nx/js:node",
+            "defaultConfiguration": "development",
+            "options": {
+                "buildTarget": "test-server-express:build"
+            },
+            "configurations": {
+                "development": {
+                    "buildTarget": "test-server-express:build:development"
+                },
+                "production": {
+                    "buildTarget": "test-server-express:build:production"
+                }
+            }
+        },
+        "lint": {
+            "executor": "@nx/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["apps/test-server-express/**/*.ts"]
+            }
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+            "options": {
+                "jestConfig": "apps/test-server-express/jest.config.ts",
+                "passWithNoTests": true
+            },
+            "configurations": {
+                "ci": {
+                    "ci": true,
+                    "codeCoverage": true
+                }
+            }
+        },
+        "docker-build": {
+            "dependsOn": ["build"],
+            "command": "docker build -f apps/test-server-express/Dockerfile . -t test-server-express"
+        }
+    },
+    "tags": []
+}
