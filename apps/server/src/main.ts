@@ -18,6 +18,7 @@ const connectionOptions: Record<string, boolean | string> = {
 app.use(cors());
 app.use(usersRouter.default);
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
+app.use(express.static('public'));
 
 // MongoDB Connection
 mongoose
