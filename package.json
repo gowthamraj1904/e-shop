@@ -3,8 +3,8 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
-        "start": "node dist/apps/test-server/main.js ",
-        "build": "npx nx run test-server:build"
+        "start": "node dist/apps/server/main.js ",
+        "build": "tsc --project  apps/server"
     },
     "private": true,
     "dependencies": {
