@@ -8,5 +8,9 @@
     "mongoose": "7.2.3",
     "tslib": "2.5.3"
   },
-  "main": "main.js"
+  "main": "main.js",
+  "scripts": {
+    "start": "node main.js",
+    "build": "node main.js"
+  }
 }
