@@ -1,7 +1,7 @@
 import { Response, Request } from 'express';
 import { bcrypt } from 'bcrypt';
 import { userSchema } from '@server/models';
-import { User } from '@libs/interfaces';
+import { User } from '../../types/user';
 
 const getUsers = async (req: Request, res: Response): Promise<void> => {
     await userSchema

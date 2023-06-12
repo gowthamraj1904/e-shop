@@ -1,4 +1,4 @@
-import { User } from '@libs/interfaces';
+import { User } from '../types/user';
 import { Schema, model } from 'mongoose';
 
 const userSchema: Schema = new Schema(
