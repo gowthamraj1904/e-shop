@@ -3,8 +3,7 @@
     "version": "0.0.0",
     "license": "MIT",
     "scripts": {
-        "start": "node dist/apps/server/main.js ",
-        "build": "tsc --project  apps/server"
+        "start": "nx run server:serve:production "
     },
     "private": true,
     "dependencies": {
